@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Hobbies from './pages/Hobbies';
 import Ideas from './pages/Ideas';
 import Todo from './pages/Todo';
+import PinAuth from './components/PinAuth';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Check if user is already authenticated (persist across page refreshes)
+  useEffect(() => {
+    const authStatus = localStorage.getItem('adaAppAuthenticated');
+    if (authStatus === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handleAuthSuccess = () => {
+    setIsAuthenticated(true);
+    localStorage.setItem('adaAppAuthenticated', 'true');
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    localStorage.removeItem('adaAppAuthenticated');
+  };
+
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      {/* Show the main app content */}
+      <Router>
         <nav className="navbar">
           <div className="nav-container">
             <Link to="/" className="nav-logo">
@@ -19,6 +41,9 @@ function App() {
               <Link to="/ideas" className="nav-link">Ideas</Link>
               <Link to="/todo" className="nav-link">To-Do</Link>
             </div>
+            <button onClick={handleLogout} className="logout-button">
+              🔓 Logout
+            </button>
           </div>
         </nav>
 
@@ -28,9 +53,14 @@ function App() {
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/todo" element={<Todo />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+
+      {/* Show pin authentication overlay if not authenticated */}
+      {!isAuthenticated && <PinAuth onAuthSuccess={handleAuthSuccess} />}
+    </div>
   );
+
+
 }
 
 function HomePage() {
