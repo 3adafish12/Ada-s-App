@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Ada-s-App/static/css/main.4c6e5a12.css",
-    "main.js": "/Ada-s-App/static/js/main.8b86f661.js",
+    "main.css": "/Ada-s-App/static/css/main.f8a31287.css",
+    "main.js": "/Ada-s-App/static/js/main.25551863.js",
     "static/js/453.aa85d9ad.chunk.js": "/Ada-s-App/static/js/453.aa85d9ad.chunk.js",
     "index.html": "/Ada-s-App/index.html",
-    "main.4c6e5a12.css.map": "/Ada-s-App/static/css/main.4c6e5a12.css.map",
-    "main.8b86f661.js.map": "/Ada-s-App/static/js/main.8b86f661.js.map",
+    "main.f8a31287.css.map": "/Ada-s-App/static/css/main.f8a31287.css.map",
+    "main.25551863.js.map": "/Ada-s-App/static/js/main.25551863.js.map",
     "453.aa85d9ad.chunk.js.map": "/Ada-s-App/static/js/453.aa85d9ad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c6e5a12.css",
-    "static/js/main.8b86f661.js"
+    "static/css/main.f8a31287.css",
+    "static/js/main.25551863.js"
   ]
 }
