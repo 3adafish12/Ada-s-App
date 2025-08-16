@@ -4,6 +4,7 @@ import './App.css';
 import Hobbies from './pages/Hobbies';
 import Ideas from './pages/Ideas';
 import Todo from './pages/Todo';
+import ResumeBuilder from './pages/ResumeBuilder';
 import PinAuth from './components/PinAuth';
 
 function App() {
@@ -38,8 +39,7 @@ function App() {
             </Link>
             <div className="nav-menu">
               <Link to="/hobbies" className="nav-link">Hobbies</Link>
-              <Link to="/ideas" className="nav-link">Ideas</Link>
-              <Link to="/todo" className="nav-link">To-Do</Link>
+              <Link to="/resume" className="nav-link">Resume Builder</Link>
             </div>
             <button onClick={handleLogout} className="logout-button">
               🔓 Logout
@@ -52,6 +52,7 @@ function App() {
           <Route path="/hobbies" element={<Hobbies />} />
           <Route path="/ideas" element={<Ideas />} />
           <Route path="/todo" element={<Todo />} />
+          <Route path="/resume" element={<ResumeBuilder />} />
         </Routes>
       </Router>
 
@@ -67,11 +68,12 @@ function HomePage() {
   return (
     <div className="homepage">
       <div className="hero-section">
-        <h1 className="welcome-title">Welcome Ada!</h1>
-        
+        <h1 className="welcome-title">Welcome to Ada's Website</h1>
+        <div className="app-links">
+          <Link to="/hobbies" className="app-link">Hobbies</Link>
+          <Link to="/resume" className="app-link">Resume Builder</Link>
+        </div>
       </div>
-      
-    
     </div>
   );
 }

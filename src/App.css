@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'Lexend', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   font-weight: 300;
 }
 
@@ -188,5 +188,84 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Homepage Styles */
+.homepage {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.hero-section {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.welcome-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+.app-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 3s ease;
+  position: relative;
+}
+
+.app-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #000000;
+  transition: all 1.5s ease;
+  transform: translateX(-50%);
+}
+
+.app-link:hover::after {
+  width: 100%;
+}
+
+/* Responsive design for homepage */
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 2rem;
+  }
+  
+  .app-links {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .app-link {
+    padding: 1.2rem;
+    font-size: 1rem;
   }
 }
